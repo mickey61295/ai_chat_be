@@ -2,11 +2,14 @@
 // Save your Gemini API key in a .env file as GEMINI_API_KEY=your_key_here
 
 require('dotenv').config();
+
 const express = require('express');
 const { GoogleGenAI } = require('@google/genai');
+const cors = require('cors');
 const app = express();
 const port = 7500;
 
+app.use(cors());
 app.use(express.json());
 
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
